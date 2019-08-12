@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+!/usr/bin/env python
 
 import requests
 
@@ -14,7 +14,8 @@ def mainn():
          |______|                                              by Hamza_Mandil""").encode('utf-8'))
 
 def hamza():
-    file1 = open("wordlist.txt", "r")
+    wordlist = raw_input("enter the name of your wordlist with extention:")
+    file1 = open(wordlist, "r")
     readfile = file1.readline()
     for site in file1:
         url = site
@@ -23,9 +24,16 @@ def hamza():
                 content = test.headers
                 if not 'X-Frame-Options' in content:
                         print "\033[1;37;40m" + url + "\033[1;32;40m  vulnerable !!!!! \n"
+                        open("vulnerable.txt", "a").write(url+"\n")
                 else:
                         print "\033[1;37;40m" + url + "\033[1;31;40m  NOT vulnerable \n"
         except:
                 print "\033[1;37;40m" + url + "NOT WORK"
 mainn()
 hamza()
+
+
+
+
+
+
