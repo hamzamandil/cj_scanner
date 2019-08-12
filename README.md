@@ -1,0 +1,1 @@
+scan for clickjacking vulnerabilities
